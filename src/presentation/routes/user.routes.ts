@@ -1,19 +1,12 @@
-import express from "express"
-import { InMemoryUserRepository } from "../../infrastructure/database/in-memory-user.repository"
 import { UserController } from "../controllers/user.controllers"
-import { CreateUserUseCase } from "../../application/use-cases/user/create-user.use-case"
-import { GetUserUseCase } from "../../application/use-cases/user/get-user.use-case"
-import { UpdateUserUseCase } from "../../application/use-cases/user/update-user.use-case"
-import { DeleteUserUseCase } from "../../application/use-cases/user/delete-user.use-case"
+import container from "../../infrastructure/container"
+import express from "express"
+import DEPENDENCY_KEYS from "../../infrastructure/constants/dependency-keys.constants"
 
 const router = express.Router()
 
-const userRepository = new InMemoryUserRepository()
-const userController = new UserController(
-    new CreateUserUseCase(userRepository),
-    new GetUserUseCase(userRepository),
-    new DeleteUserUseCase(userRepository),
-    new UpdateUserUseCase(userRepository)
+const userController = container.get<UserController>(
+    DEPENDENCY_KEYS.UserController
 )
 
 router.post("/", userController.createUser.bind(userController))

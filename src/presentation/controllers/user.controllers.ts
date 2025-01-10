@@ -3,12 +3,19 @@ import { CreateUserUseCase } from "../../application/use-cases/user/create-user.
 import { DeleteUserUseCase } from "../../application/use-cases/user/delete-user.use-case"
 import { GetUserUseCase } from "../../application/use-cases/user/get-user.use-case"
 import { UpdateUserUseCase } from "../../application/use-cases/user/update-user.use-case"
+import { inject, injectable } from "inversify"
+import DEPENDENCY_KEYS from "../../infrastructure/constants/dependency-keys.constants"
 
+@injectable()
 export class UserController {
     constructor(
+        @inject(DEPENDENCY_KEYS.CreateUserUseCase)
         private createUserUseCase: CreateUserUseCase,
+        @inject(DEPENDENCY_KEYS.GetUserUseCase)
         private getUserUseCase: GetUserUseCase,
+        @inject(DEPENDENCY_KEYS.DeleteUserUseCase)
         private deleteUserUseCase: DeleteUserUseCase,
+        @inject(DEPENDENCY_KEYS.UpdateUserUseCase)
         private updateUserUseCase: UpdateUserUseCase
     ) {}
 
