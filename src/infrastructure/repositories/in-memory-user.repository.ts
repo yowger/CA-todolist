@@ -1,4 +1,4 @@
-import { UserRepository } from "../../application/interfaces/UserRepository"
+import { UserRepository } from "../../domain/repositories/user-repository.repository"
 import { User } from "../../domain/entities/user.entities"
 
 export class InMemoryUserRepository implements UserRepository {
@@ -8,6 +8,10 @@ export class InMemoryUserRepository implements UserRepository {
         this.users.push(user)
 
         return user
+    }
+
+    async findByEmail(email: string): Promise<User> {
+        return this.users.find((user) => user.email === email)
     }
 
     async findById(id: string): Promise<User | null> {

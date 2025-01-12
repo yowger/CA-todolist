@@ -1,12 +1,12 @@
 import { Container } from "inversify"
-import { UserRepository } from "../application/interfaces/UserRepository"
-import { InMemoryUserRepository } from "./database/in-memory-user.repository"
-import { CreateUserUseCase } from "../application/use-cases/user/create-user.use-case"
+import { UserRepository } from "../domain/repositories/user-repository.repository"
+import { InMemoryUserRepository } from "./repositories/in-memory-user.repository"
 import { DeleteUserUseCase } from "../application/use-cases/user/delete-user.use-case"
 import { GetUserUseCase } from "../application/use-cases/user/get-user.use-case"
 import { UpdateUserUseCase } from "../application/use-cases/user/update-user.use-case"
 import { UserController } from "../presentation/controllers/user.controllers"
 import DEPENDENCY_KEYS from "./constants/dependency-keys.constants"
+import { RegisterUserUseCase } from "../application/use-cases/auth/register-user.use-case"
 
 const container = new Container()
 
@@ -15,8 +15,8 @@ container
     .to(InMemoryUserRepository)
 
 container
-    .bind<CreateUserUseCase>(DEPENDENCY_KEYS.CreateUserUseCase)
-    .to(CreateUserUseCase)
+    .bind<RegisterUserUseCase>(DEPENDENCY_KEYS.RegisterUserUseCase)
+    .to(RegisterUserUseCase)
 container
     .bind<GetUserUseCase>(DEPENDENCY_KEYS.GetUserUseCase)
     .to(GetUserUseCase)

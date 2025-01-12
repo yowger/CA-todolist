@@ -1,5 +1,5 @@
 import { inject, injectable } from "inversify"
-import { UserRepository } from "../../interfaces/UserRepository"
+import { UserRepository } from "../../../domain/repositories/user-repository.repository"
 import DEPENDENCY_KEYS from "../../../infrastructure/constants/dependency-keys.constants"
 
 @injectable()

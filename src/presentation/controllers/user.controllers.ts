@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
-import { CreateUserUseCase } from "../../application/use-cases/user/create-user.use-case"
+// import { CreateUserUseCase } from "../../application/use-cases/user/create-user.use-case"
 import { DeleteUserUseCase } from "../../application/use-cases/user/delete-user.use-case"
 import { GetUserUseCase } from "../../application/use-cases/user/get-user.use-case"
 import { UpdateUserUseCase } from "../../application/use-cases/user/update-user.use-case"
@@ -9,8 +9,8 @@ import DEPENDENCY_KEYS from "../../infrastructure/constants/dependency-keys.cons
 @injectable()
 export class UserController {
     constructor(
-        @inject(DEPENDENCY_KEYS.CreateUserUseCase)
-        private createUserUseCase: CreateUserUseCase,
+        // @inject(DEPENDENCY_KEYS.CreateUserUseCase)
+        // private createUserUseCase: CreateUserUseCase,
         @inject(DEPENDENCY_KEYS.GetUserUseCase)
         private getUserUseCase: GetUserUseCase,
         @inject(DEPENDENCY_KEYS.DeleteUserUseCase)
@@ -19,11 +19,11 @@ export class UserController {
         private updateUserUseCase: UpdateUserUseCase
     ) {}
 
-    async createUser(req: Request, res: Response) {
-        const user = await this.createUserUseCase.execute(req.body)
+    // async createUser(req: Request, res: Response) {
+    //     const user = await this.createUserUseCase.execute(req.body)
 
-        return res.status(201).json(user)
-    }
+    //     return res.status(201).json(user)
+    // }
 
     async getUser(req: Request, res: Response) {
         try {
