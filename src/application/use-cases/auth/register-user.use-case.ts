@@ -2,7 +2,7 @@ import { inject, injectable } from "inversify"
 import { User } from "../../../domain/entities/user.entities"
 import { UserRepository } from "../../../domain/repositories/user-repository.repository"
 import { EmailProviderService } from "../../../domain/services/email-provider.service"
-import DEPENDENCY_KEYS from "../../../infrastructure/constants/dependency-keys.constants"
+import DEPENDENCY_KEYS from "../../../shared/constants/dependency-keys.constants"
 import { RegisterUserDTO } from "../../dto/auth.dto"
 import { PasswordService } from "../../../domain/services/password.service"
 

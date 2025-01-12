@@ -5,7 +5,7 @@ import { DeleteUserUseCase } from "../application/use-cases/user/delete-user.use
 import { GetUserUseCase } from "../application/use-cases/user/get-user.use-case"
 import { UpdateUserUseCase } from "../application/use-cases/user/update-user.use-case"
 import { UserController } from "../presentation/controllers/user.controllers"
-import DEPENDENCY_KEYS from "./constants/dependency-keys.constants"
+import DEPENDENCY_KEYS from "../shared/constants/dependency-keys.constants"
 import { RegisterUserUseCase } from "../application/use-cases/auth/register-user.use-case"
 
 const container = new Container()

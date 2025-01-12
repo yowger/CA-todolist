@@ -1,7 +1,7 @@
 import { inject, injectable } from "inversify"
 import { User } from "../../../domain/entities/user.entities"
 import { UserRepository } from "../../../domain/repositories/user-repository.repository"
-import DEPENDENCY_KEYS from "../../../infrastructure/constants/dependency-keys.constants"
+import DEPENDENCY_KEYS from "../../../shared/constants/dependency-keys.constants"
 import { UpdateUserDTO } from "../../dto/user.dto"
 
 @injectable()

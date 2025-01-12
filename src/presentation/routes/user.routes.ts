@@ -1,7 +1,7 @@
 import { UserController } from "../controllers/user.controllers"
 import container from "../../infrastructure/container"
 import express from "express"
-import DEPENDENCY_KEYS from "../../infrastructure/constants/dependency-keys.constants"
+import DEPENDENCY_KEYS from "../../shared/constants/dependency-keys.constants"
 
 const router = express.Router()
 

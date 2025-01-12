@@ -4,7 +4,7 @@ import { DeleteUserUseCase } from "../../application/use-cases/user/delete-user.
 import { GetUserUseCase } from "../../application/use-cases/user/get-user.use-case"
 import { UpdateUserUseCase } from "../../application/use-cases/user/update-user.use-case"
 import { inject, injectable } from "inversify"
-import DEPENDENCY_KEYS from "../../infrastructure/constants/dependency-keys.constants"
+import DEPENDENCY_KEYS from "../../shared/constants/dependency-keys.constants"
 
 @injectable()
 export class UserController {
