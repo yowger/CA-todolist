@@ -34,6 +34,7 @@ export class RegisterUserUseCase {
             password: hashedPassword,
         })
 
+        // side effect events
         await this.emailProviderService.sendEmail(
             user.email,
             "Welcome",

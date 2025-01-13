@@ -1,4 +1,4 @@
-import { UserController } from "../controllers/user.controllers"
+import { UserController } from "../controllers/user.controller"
 import container from "../../infrastructure/container"
 import express from "express"
 import DEPENDENCY_KEYS from "../../shared/constants/dependency-keys.constants"
@@ -9,9 +9,8 @@ const userController = container.get<UserController>(
     DEPENDENCY_KEYS.UserController
 )
 
-// router.post("/", userController.createUser.bind(userController))
-router.get("/:id", userController.getUser.bind(userController))
-router.put("/:id", userController.updateUser.bind(userController))
-router.delete("/:id", userController.deleteUser.bind(userController))
+router.get("/:id", userController.getUserHandler.bind(userController))
+router.put("/:id", userController.updateUserHandler.bind(userController))
+router.delete("/:id", userController.deleteUserHandler.bind(userController))
 
 export default router

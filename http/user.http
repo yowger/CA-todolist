@@ -1,11 +1,11 @@
-### Create User
-POST http://localhost:3000/users
+### Register User
+POST http://localhost:3000/auth
 Content-Type: application/json
 
 {
   "name": "John Doe",
   "email": "john.doe@example.com",
-  "age": 30
+  "password": "12345"
 }
 
 ### Get User
@@ -19,7 +19,6 @@ Content-Type: application/json
   "id": "1",  
   "name": "John Smith",
   "email": "john.smith@example.com",
-  "age": 31
 }
 
 ### Delete User

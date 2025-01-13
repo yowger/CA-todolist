@@ -4,6 +4,7 @@ const DEPENDENCY_KEYS = {
     GetUserUseCase: Symbol.for("GetUserUseCase"),
     UpdateUserUseCase: Symbol.for("UpdateUserUseCase"),
     DeleteUserUseCase: Symbol.for("DeleteUserUseCase"),
+    AuthController: Symbol.for("AuthController"),
     UserController: Symbol.for("UserController"),
     EmailProviderService: Symbol.for("EmailProviderService"),
     PasswordService: Symbol.for("PasswordService"),
