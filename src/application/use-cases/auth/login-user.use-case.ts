@@ -6,7 +6,7 @@ import { LoginDTO } from "../../dto/auth.dto"
 import { PasswordService } from "../../../domain/services/password.service"
 
 @injectable()
-export class RegisterUserUseCase {
+export class LoginUserUseCase {
     constructor(
         @inject(DEPENDENCY_KEYS.UserRepository)
         private userRepository: UserRepository,

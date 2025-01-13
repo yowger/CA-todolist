@@ -9,6 +9,10 @@ const authController = container.get<AuthController>(
     DEPENDENCY_KEYS.AuthController
 )
 
-router.post("/", authController.registerUserHandler.bind(authController))
+router.post("/login", authController.loginUserHandler.bind(authController))
+router.post(
+    "/register",
+    authController.registerUserHandler.bind(authController)
+)
 
 export default router

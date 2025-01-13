@@ -12,7 +12,7 @@ export class AuthController {
         private registerUser: RegisterUserUseCase
     ) {}
 
-    login = (req: Request, res: Response) => {
+    loginUserHandler = (req: Request, res: Response) => {
         const user = this.loginUser.execute(req.body)
 
         res.status(200).json(user)

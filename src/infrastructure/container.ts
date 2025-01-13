@@ -12,6 +12,7 @@ import { EmailProviderService } from "../domain/services/email-provider.service"
 import { NodeMailerEmailService } from "./services/email.service"
 import { PasswordService } from "../domain/services/password.service"
 import { BcryptPasswordService } from "./services/password.service"
+import { LoginUserUseCase } from "../application/use-cases/auth/login-user.use-case"
 
 const container = new Container()
 
@@ -34,9 +35,14 @@ container
 container
     .bind<DeleteUserUseCase>(DEPENDENCY_KEYS.DeleteUserUseCase)
     .to(DeleteUserUseCase)
+
+container
+    .bind<LoginUserUseCase>(DEPENDENCY_KEYS.LoginUserUseCase)
+    .to(LoginUserUseCase)
 container
     .bind<RegisterUserUseCase>(DEPENDENCY_KEYS.RegisterUserUseCase)
     .to(RegisterUserUseCase)
+
 container
     .bind<UserController>(DEPENDENCY_KEYS.UserController)
     .to(UserController)
