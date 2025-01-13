@@ -6,9 +6,17 @@ import { RegisterUserUseCase } from "../../application/use-cases/auth/register-u
 @injectable()
 export class AuthController {
     constructor(
+        @inject(DEPENDENCY_KEYS.LoginUserUseCase)
+        private loginUser: RegisterUserUseCase,
         @inject(DEPENDENCY_KEYS.RegisterUserUseCase)
         private registerUser: RegisterUserUseCase
     ) {}
+
+    login = (req: Request, res: Response) => {
+        const user = this.loginUser.execute(req.body)
+
+        res.status(200).json(user)
+    }
 
     async registerUserHandler(req: Request, res: Response) {
         const user = await this.registerUser.execute(req.body)

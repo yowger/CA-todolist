@@ -1,5 +1,6 @@
 const DEPENDENCY_KEYS = {
     UserRepository: Symbol.for("UserRepository"),
+    LoginUserUseCase: Symbol.for("LoginUserUseCase"),
     RegisterUserUseCase: Symbol.for("RegisterUserUseCase"),
     GetUserUseCase: Symbol.for("GetUserUseCase"),
     UpdateUserUseCase: Symbol.for("UpdateUserUseCase"),
