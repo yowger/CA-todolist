@@ -29,7 +29,8 @@ export class AuthController {
             const registerUserDTO = plainToInstance(RegisterUserDTO, req.body)
             await validateOrReject(registerUserDTO)
 
-            const user = await this.registerUser.execute(req.body)
+            const user = await this.registerUser.execute(registerUserDTO)
+            console.log("🚀 ~ AuthController ~ registerUserHandler ~ user:", user)
 
             res.status(201).json(new UserResponseDTO(user))
         } catch (error) {

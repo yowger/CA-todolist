@@ -3,12 +3,14 @@ import { IsEmail, IsNotEmpty, IsString } from "class-validator"
 export class RegisterUserDTO {
     @IsString()
     @IsNotEmpty()
-    name: string
+    readonly name: string
+
     @IsEmail()
-    email: string
+    readonly email: string
+
     @IsString()
     @IsNotEmpty()
-    password: string
+    readonly password: string
 
     constructor(partialUser: Partial<RegisterUserDTO>) {
         Object.assign(this, partialUser)
