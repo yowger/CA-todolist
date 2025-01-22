@@ -21,5 +21,8 @@ logs/
 .DS_Store
 Thumbs.db
 
+# mine
 /notes
 
+# test coverage for test
+coverage/

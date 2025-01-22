@@ -2,14 +2,14 @@ import { GetUserUseCase } from "../../../src/application/use-cases/user/get-user
 import { UserRepository } from "../../../src/domain/repositories/user-repository.repository"
 
 describe("GetUserUseCase", () => {
-    let getUserUseCase: GetUserUseCase
-    let mockUserRepository: jest.Mocked<UserRepository>
-
-    const correspondingUser = {
+    const mockUser = {
         id: "1",
         name: "John",
         email: "johnDoe@email",
     }
+
+    let getUserUseCase: GetUserUseCase
+    let mockUserRepository: jest.Mocked<UserRepository>
 
     beforeEach(() => {
         mockUserRepository = {
@@ -20,14 +20,12 @@ describe("GetUserUseCase", () => {
     })
 
     it("should return a user when user exists", async () => {
-        mockUserRepository.findById.mockResolvedValue(correspondingUser)
+        mockUserRepository.findById.mockResolvedValue(mockUser)
 
-        const result = await getUserUseCase.execute(correspondingUser.id)
+        const result = await getUserUseCase.execute(mockUser.id)
 
-        expect(mockUserRepository.findById).toHaveBeenCalledWith(
-            correspondingUser.id
-        )
-        expect(result).toEqual(correspondingUser)
+        expect(mockUserRepository.findById).toHaveBeenCalledWith(mockUser.id)
+        expect(result).toEqual(mockUser)
     })
 
     it("should return null when the user does not exist", async () => {
