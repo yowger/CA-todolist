@@ -1,4 +1,4 @@
-import container from "../../infrastructure/container"
+import container from "../../infrastructure/container/container"
 import express from "express"
 import DEPENDENCY_KEYS from "../../shared/constants/dependency-keys.constants"
 import { AuthController } from "../controllers/auth.controller"

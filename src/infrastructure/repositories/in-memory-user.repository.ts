@@ -5,17 +5,28 @@ export class InMemoryUserRepository implements UserRepository {
     private users: User[] = []
 
     async create(user: User): Promise<User> {
-        this.users.push(user)
+        const id = (this.users.length + 1).toString()
 
-        return user
+        const newUser = new User({
+            id,
+            name: user.name,
+            email: user.email,
+            password: user.password,
+        })
+
+        this.users.push(newUser)
+
+        console.log("🚀 ~ InMemoryUserRepository ~ users:", this.users)
+        return newUser
     }
 
     async findByEmail(email: string): Promise<User> {
-        return this.users.find((user) => user.email === email)
+        return this.users.find((u) => u.email === email)
     }
 
     async findById(id: string): Promise<User | null> {
-        return this.users.find((user) => user.id === id) || null
+        console.log("users: ", this.users)
+        return this.users.find((u) => u.id === id) || null
     }
 
     async update(user: User): Promise<User> {

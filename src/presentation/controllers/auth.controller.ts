@@ -30,7 +30,6 @@ export class AuthController {
             await validateOrReject(registerUserDTO)
 
             const user = await this.registerUser.execute(registerUserDTO)
-            console.log("🚀 ~ AuthController ~ registerUserHandler ~ user:", user)
 
             res.status(201).json(new UserResponseDTO(user))
         } catch (error) {

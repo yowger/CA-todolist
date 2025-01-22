@@ -17,13 +17,13 @@ export class UserController {
     ) {}
 
     async getUserHandler(req: Request, res: Response) {
-        try {
-            const user = await this.getUser.execute(req.params.id)
+        const user = await this.getUser.execute(req.params.id)
 
-            return res.status(200).json(user)
-        } catch (error) {
+        if (!user) {
             return res.status(404).json({ message: "User not found" })
         }
+
+        return res.status(200).json(user)
     }
 
     async updateUserHandler(req: Request, res: Response) {

@@ -18,10 +18,12 @@ export class RegisterUserDTO {
 }
 
 export class UserResponseDTO {
+    id: string
     name: string
     email: string
 
     constructor(user: any) {
+        this.id = user.id
         this.name = user.name
         this.email = user.email
     }

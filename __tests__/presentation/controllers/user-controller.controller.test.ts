@@ -4,14 +4,6 @@ import { GetUserUseCase } from "../../../src/application/use-cases/user/get-user
 import { UpdateUserUseCase } from "../../../src/application/use-cases/user/update-user.use-case"
 import { UserController } from "../../../src/presentation/controllers/user.controller"
 
-/*
-
-        private getUser: GetUserUseCase,
-        @inject(DEPENDENCY_KEYS.DeleteUserUseCase)
-        private deleteUser: DeleteUserUseCase,
-        @inject(DEPENDENCY_KEYS.UpdateUserUseCase)
-        private updateUser: UpdateUserUseCase
-*/
 describe("userController", () => {
     let userController: UserController
     let mockGetUserUseCase: jest.Mocked<GetUserUseCase>

@@ -2,10 +2,12 @@ import "reflect-metadata"
 import express from "express"
 import authRoutes from "./presentation/routes/auth.routes"
 import userRoutes from "./presentation/routes/user.routes"
+import morgan from "morgan"
 
 const app = express()
 app.use(express.json())
 
+app.use(morgan("combined"))
 app.use("/auth", authRoutes)
 app.use("/users", userRoutes)
 
