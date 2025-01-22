@@ -11,3 +11,15 @@ app.use("/users", userRoutes)
 
 const PORT = 3000
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
+
+process
+    .on("unhandledRejection", (error, p) => {
+        console.error(new Date().toUTCString() + "Unhandled Rejection", error)
+    })
+    .on("uncaughtException", (error) => {
+        console.error(new Date().toUTCString() + " uncaughtException:", error)
+
+        process.exit(1)
+    })
+
+// todo logger
