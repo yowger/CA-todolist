@@ -1,13 +1,12 @@
+import { plainToInstance } from "class-transformer"
+import { validateOrReject } from "class-validator"
 import { Request, Response } from "express"
 import { inject, injectable } from "inversify"
-import DEPENDENCY_KEYS from "../../shared/constants/dependency-keys.constants"
-import { RegisterUserUseCase } from "../../application/use-cases/auth/register-user.use-case"
-import { plainToInstance } from "class-transformer"
-import {
-    RegisterUserDTO,
-    UserResponseDTO,
-} from "../../application/dto/auth.dto"
-import { validateOrReject } from "class-validator"
+
+import { RegisterUserUseCase } from "@app/use-cases/auth/register-user.use-case"
+import { RegisterUserDTO, UserResponseDTO } from "@app/dto/auth.dto"
+
+import DEPENDENCY_KEYS from "@/shared/constants/dependency-keys.constants"
 
 @injectable()
 export class AuthController {

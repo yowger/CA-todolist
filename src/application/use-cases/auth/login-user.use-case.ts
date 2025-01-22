@@ -1,9 +1,12 @@
 import { inject, injectable } from "inversify"
-import { User } from "../../../domain/entities/user.entities"
-import { UserRepository } from "../../../domain/repositories/user-repository.repository"
-import DEPENDENCY_KEYS from "../../../shared/constants/dependency-keys.constants"
-import { LoginDTO } from "../../dto/auth.dto"
-import { PasswordService } from "../../../domain/services/password.service"
+
+import { LoginDTO } from "@app/dto/auth.dto"
+
+import { User } from "@domain/entities/user.entities"
+import { UserRepository } from "@domain/repositories/user-repository.repository"
+import { PasswordService } from "@domain/services/password.service"
+
+import DEPENDENCY_KEYS from "@/shared/constants/dependency-keys.constants"
 
 @injectable()
 export class LoginUserUseCase {

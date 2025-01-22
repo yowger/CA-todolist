@@ -16,6 +16,7 @@
         "class-validator": "^0.14.1",
         "express": "^4.21.2",
         "inversify": "^6.2.1",
+        "module-alias": "^2.2.3",
         "morgan": "^1.10.0",
         "nodemon": "^3.1.9",
         "pg": "^8.13.1",
@@ -34,5 +35,11 @@
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "description": ""
+    "description": "",
+    "_moduleAliases": {
+        "@src": "src",
+        "@app": "src/application",
+        "@infra": "src/domain",
+        "@pres": "src/presentation"
+    }
 }

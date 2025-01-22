@@ -1,6 +1,8 @@
 import { inject, injectable } from "inversify"
-import { UserRepository } from "../../../domain/repositories/user-repository.repository"
-import DEPENDENCY_KEYS from "../../../shared/constants/dependency-keys.constants"
+
+import { UserRepository } from "@domain/repositories/user-repository.repository"
+
+import DEPENDENCY_KEYS from "@/shared/constants/dependency-keys.constants"
 
 @injectable()
 export class DeleteUserUseCase {

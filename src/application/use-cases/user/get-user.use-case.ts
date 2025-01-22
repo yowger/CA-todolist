@@ -1,7 +1,9 @@
 import { inject, injectable } from "inversify"
-import { User } from "../../../domain/entities/user.entities"
-import { UserRepository } from "../../../domain/repositories/user-repository.repository"
-import DEPENDENCY_KEYS from "../../../shared/constants/dependency-keys.constants"
+
+import { User } from "@domain/entities/user.entities"
+import { UserRepository } from "@domain/repositories/user-repository.repository"
+
+import DEPENDENCY_KEYS from "@/shared/constants/dependency-keys.constants"
 
 @injectable()
 export class GetUserUseCase {

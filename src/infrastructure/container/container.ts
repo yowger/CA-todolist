@@ -1,18 +1,23 @@
 import { Container } from "inversify"
-import { UserRepository } from "../../domain/repositories/user-repository.repository"
-import { InMemoryUserRepository } from "../repositories/in-memory-user.repository"
-import { DeleteUserUseCase } from "../../application/use-cases/user/delete-user.use-case"
-import { GetUserUseCase } from "../../application/use-cases/user/get-user.use-case"
-import { UpdateUserUseCase } from "../../application/use-cases/user/update-user.use-case"
-import { UserController } from "../../presentation/controllers/user.controller"
-import DEPENDENCY_KEYS from "../../shared/constants/dependency-keys.constants"
-import { RegisterUserUseCase } from "../../application/use-cases/auth/register-user.use-case"
-import { AuthController } from "../../presentation/controllers/auth.controller"
-import { EmailProviderService } from "../../domain/services/email-provider.service"
-import { NodeMailerEmailService } from "../services/email.service"
-import { PasswordService } from "../../domain/services/password.service"
-import { BcryptPasswordService } from "../services/password.service"
-import { LoginUserUseCase } from "../../application/use-cases/auth/login-user.use-case"
+
+import { DeleteUserUseCase } from "@app/use-cases/user/delete-user.use-case"
+import { GetUserUseCase } from "@app/use-cases/user/get-user.use-case"
+import { LoginUserUseCase } from "@app/use-cases/auth/login-user.use-case"
+import { UpdateUserUseCase } from "@app/use-cases/user/update-user.use-case"
+import { RegisterUserUseCase } from "@app/use-cases/auth/register-user.use-case"
+
+import { EmailProviderService } from "@domain/services/email-provider.service"
+import { UserRepository } from "@/domain/repositories/user-repository.repository"
+import { PasswordService } from "@domain/services/password.service"
+
+import { InMemoryUserRepository } from "@infra/repositories/in-memory-user.repository"
+import { NodeMailerEmailService } from "@infra/services/email.service"
+import { BcryptPasswordService } from "@infra/services/password.service"
+
+import { AuthController } from "@pres/controllers/auth.controller"
+import { UserController } from "@pres/controllers/user.controller"
+
+import DEPENDENCY_KEYS from "@/shared/constants/dependency-keys.constants"
 
 const container = new Container()
 

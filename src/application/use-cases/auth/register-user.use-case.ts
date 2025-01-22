@@ -1,10 +1,13 @@
 import { inject, injectable } from "inversify"
-import { User } from "../../../domain/entities/user.entities"
-import { UserRepository } from "../../../domain/repositories/user-repository.repository"
-import { EmailProviderService } from "../../../domain/services/email-provider.service"
-import DEPENDENCY_KEYS from "../../../shared/constants/dependency-keys.constants"
-import { RegisterUserDTO } from "../../dto/auth.dto"
-import { PasswordService } from "../../../domain/services/password.service"
+
+import { RegisterUserDTO } from "@app/dto/auth.dto"
+
+import { User } from "@domain/entities/user.entities"
+import { UserRepository } from "@domain/repositories/user-repository.repository"
+import { EmailProviderService } from "@domain/services/email-provider.service"
+import { PasswordService } from "@domain/services/password.service"
+
+import DEPENDENCY_KEYS from "@/shared/constants/dependency-keys.constants"
 
 @injectable()
 export class RegisterUserUseCase {

@@ -1,8 +1,10 @@
+import "module-alias/register"
 import "reflect-metadata"
 import express from "express"
-import authRoutes from "./presentation/routes/auth.routes"
-import userRoutes from "./presentation/routes/user.routes"
 import morgan from "morgan"
+
+import authRoutes from "@/presentation/routes/auth.routes"
+import userRoutes from "@/presentation/routes/user.routes"
 
 const app = express()
 app.use(express.json())

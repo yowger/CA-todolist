@@ -1,9 +1,11 @@
 import { Request, Response } from "express"
-import { DeleteUserUseCase } from "../../application/use-cases/user/delete-user.use-case"
-import { GetUserUseCase } from "../../application/use-cases/user/get-user.use-case"
-import { UpdateUserUseCase } from "../../application/use-cases/user/update-user.use-case"
 import { inject, injectable } from "inversify"
-import DEPENDENCY_KEYS from "../../shared/constants/dependency-keys.constants"
+
+import { DeleteUserUseCase } from "@app/use-cases/user/delete-user.use-case"
+import { GetUserUseCase } from "@app/use-cases/user/get-user.use-case"
+import { UpdateUserUseCase } from "@app/use-cases/user/update-user.use-case"
+
+import DEPENDENCY_KEYS from "@/shared/constants/dependency-keys.constants"
 
 @injectable()
 export class UserController {

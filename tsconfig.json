@@ -8,6 +8,14 @@
         "moduleResolution": "node",
         "sourceMap": true,
         "outDir": "dist",
-        "experimentalDecorators": true
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"],
+            "@app/*": ["src/application/*"],
+            "@domain/*": ["src/domain/*"],
+            "@infra/*": ["src/infrastructure/*"],
+            "@pres/*": ["src/presentation/*"]
+        }
     }
 }
