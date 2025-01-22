@@ -17,5 +17,6 @@
             "@infra/*": ["src/infrastructure/*"],
             "@pres/*": ["src/presentation/*"]
         }
-    }
+    },
+    "include": ["src/**/*", "__tests__"]
 }

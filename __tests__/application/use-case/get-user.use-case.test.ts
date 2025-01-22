@@ -1,5 +1,6 @@
-import { GetUserUseCase } from "../../../src/application/use-cases/user/get-user.use-case"
-import { UserRepository } from "../../../src/domain/repositories/user-repository.repository"
+import { GetUserUseCase } from "@app/use-cases/user/get-user.use-case"
+
+import { UserRepository } from "@domain/repositories/user-repository.repository"
 
 describe("GetUserUseCase", () => {
     const mockUser = {

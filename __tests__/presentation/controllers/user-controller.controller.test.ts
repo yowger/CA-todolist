@@ -1,8 +1,10 @@
 import { Request, Response } from "express"
-import { DeleteUserUseCase } from "../../../src/application/use-cases/user/delete-user.use-case"
-import { GetUserUseCase } from "../../../src/application/use-cases/user/get-user.use-case"
-import { UpdateUserUseCase } from "../../../src/application/use-cases/user/update-user.use-case"
-import { UserController } from "../../../src/presentation/controllers/user.controller"
+
+import { DeleteUserUseCase } from "@app/use-cases/user/delete-user.use-case"
+import { GetUserUseCase } from "@app/use-cases/user/get-user.use-case"
+import { UpdateUserUseCase } from "@app/use-cases/user/update-user.use-case"
+
+import { UserController } from "@pres/controllers/user.controller"
 
 describe("userController", () => {
     let userController: UserController
