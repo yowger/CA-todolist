@@ -22,8 +22,6 @@ process
     })
     .on("uncaughtException", (error) => {
         console.error(new Date().toUTCString() + " uncaughtException:", error)
-
-        process.exit(1)
     })
 
 // todo logger
