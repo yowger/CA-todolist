@@ -1,11 +1,15 @@
 import "module-alias/register"
 import "reflect-metadata"
+import dotenv from "dotenv"
+dotenv.config()
+import config from "config"
 import express from "express"
 import morgan from "morgan"
 
-import authRoutes from "@/presentation/routes/auth.routes"
-import userRoutes from "@/presentation/routes/user.routes"
+import authRoutes from "@pres/routes/auth.routes"
+import userRoutes from "@pres/routes/user.routes"
 
+console.log("🚀 ~ config:", config)
 const app = express()
 app.use(express.json())
 
@@ -25,3 +29,4 @@ process
     })
 
 // todo logger
+// todo config
