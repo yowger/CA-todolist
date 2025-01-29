@@ -3,22 +3,14 @@ import "reflect-metadata"
 import dotenv from "dotenv"
 dotenv.config()
 import config from "config"
-import express from "express"
-import morgan from "morgan"
 
-import authRoutes from "@pres/routes/auth.routes"
-import userRoutes from "@pres/routes/user.routes"
+import App from "@infra/server/app"
 
-console.log("🚀 ~ config:", config)
-const app = express()
-app.use(express.json())
+const app = new App().express
 
-app.use(morgan("combined"))
-app.use("/auth", authRoutes)
-app.use("/users", userRoutes)
-
-const PORT = 3000
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
+app.listen(config.get("port"), () =>
+    console.log(`Server running on port ${config.get("port")}`)
+)
 
 process
     .on("unhandledRejection", (error, p) => {
