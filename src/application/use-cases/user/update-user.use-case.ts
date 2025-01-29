@@ -14,8 +14,8 @@ export class UpdateUserUseCase {
         private userRepository: UserRepository
     ) {}
 
-    async execute(data: UpdateUserDTO): Promise<User> {
-        const user = await this.userRepository.findById(data.id)
+    async execute(id: string, data: UpdateUserDTO): Promise<User | null> {
+        const user = await this.userRepository.findById(id)
 
         if (!user) {
             throw new Error("User not found")
@@ -26,6 +26,6 @@ export class UpdateUserUseCase {
             ...data,
         }
 
-        return this.userRepository.update(updatedUser)
+        return this.userRepository.update(id, updatedUser)
     }
 }

@@ -29,7 +29,8 @@ export class UserController {
     }
 
     async updateUserHandler(req: Request, res: Response) {
-        const user = await this.updateUser.execute(req.body)
+        // get id from token when implement auth
+        const user = await this.updateUser.execute(req.params.id, req.body)
 
         return res.status(200).json(user)
     }

@@ -11,7 +11,7 @@ export class DeleteUserUseCase {
         private userRepository: UserRepository
     ) {}
 
-    async execute(id: string): Promise<boolean> {
+    async execute(id: string): Promise<void> {
         return this.userRepository.delete(id)
     }
 }
